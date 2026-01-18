@@ -100,6 +100,12 @@ const Projects: React.FC = () => {
     ? projects 
     : projects.filter(project => project.category === filter);
 
+  const toExternalHref = (url: string) => {
+    if (!url) return url;
+    if (/^[a-z][a-z0-9+.-]*:/i.test(url)) return url;
+    return `https://${url}`;
+  };
+
   return (
     <section id="projects" className="scroll-mt-20 py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -191,7 +197,7 @@ const Projects: React.FC = () => {
 
                 <div className="flex justify-between">
                   <motion.a
-                    href={project.liveUrl}
+                    href={toExternalHref(project.liveUrl)}
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
@@ -202,7 +208,7 @@ const Projects: React.FC = () => {
                     Demo
                   </motion.a>
                   <motion.a
-                    href={project.githubUrl}
+                    href={toExternalHref(project.githubUrl)}
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
