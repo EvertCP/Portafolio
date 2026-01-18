@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
