@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaCode, FaUser, FaGraduationCap, FaBriefcase } from 'react-icons/fa';
+import HeroBadge3D from './HeroBadge3D';
 
 const Hero: React.FC = () => {
+  const firstName = 'Evert';
+  const lastName = 'Cardenas';
   const highlights = [
     {
       icon: <FaGraduationCap />,
@@ -46,7 +49,7 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="mt-6 text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
             >
-              Evert Cardenas
+              {firstName} {lastName}
             </motion.h1>
 
             <motion.p
@@ -86,19 +89,9 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="relative"
+            className="relative self-start w-full"
           >
-            <div className="relative mx-auto w-64 h-64 md:w-80 md:h-80">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 blur-2xl opacity-30"></div>
-              <div className="relative w-full h-full rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center shadow-2xl">
-                <FaCode className="text-white text-5xl" />
-              </div>
-              <motion.div
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
-                className="absolute inset-0 rounded-full border-4 border-blue-200/80 dark:border-blue-800/70"
-              ></motion.div>
-            </div>
+            <HeroBadge3D firstName={firstName} lastName={lastName} />
           </motion.div>
         </div>
       </div>

@@ -9,7 +9,7 @@ interface Project {
   image: string;
   technologies: string[];
   liveUrl: string;
-  githubUrl: string;
+  
   category: string;
 }
 
@@ -24,7 +24,6 @@ const Projects: React.FC = () => {
       image: "mapbox-web.png",
       technologies: ["React", "Node.js", "MongoDB", "Mapbox"],
       liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
       category: "fullstack"
     },
     {
@@ -34,7 +33,6 @@ const Projects: React.FC = () => {
       image: "santa-web.png",
       technologies: ["React", "TypeScript", "Firebase", "Tailwind"],
       liveUrl: "santahamburguesa.com",
-      githubUrl: "https://github.com",
       category: "frontend"
     },
     {
@@ -44,7 +42,6 @@ const Projects: React.FC = () => {
       image: "mm-web.png",
       technologies: ["Astro", "Tailwind", "Vite", "Framer Motion"],
       liveUrl: "https://moon-minds-landing.vercel.app/",
-      githubUrl: "https://github.com",
       category: "frontend"
     },
     {
@@ -53,8 +50,7 @@ const Projects: React.FC = () => {
       description: "Portafolio personal con animaciones, modo oscuro y diseño responsive.",
       image: "portafolio-web.png",
       technologies: ["React", "Framer Motion", "Tailwind", "Vite"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      liveUrl: "https://evertcp.dev",
       category: "frontend"
     },
     {
@@ -63,8 +59,7 @@ const Projects: React.FC = () => {
       description: "Sitio web corporativo con animaciones, modo oscuro y diseño responsive.",
       image: "campos-web.png",
       technologies: ["React", "MongoDB", "Node.js", "Tailwind", "Vite"],
-      liveUrl: "campos-asociados.vercel.app",
-      githubUrl: "https://github.com",
+      liveUrl: "https://cacg.com.mx",
       category: "fullstack"
     },
     {
@@ -74,7 +69,6 @@ const Projects: React.FC = () => {
       image: "https://via.placeholder.com/400x300",
       technologies: ["Node.js", "Express", "MongoDB", "JWT", "Docker"],
       liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
       category: "fullstack"
     },
     {
@@ -84,7 +78,6 @@ const Projects: React.FC = () => {
       image: "valvulas-web.png",
       technologies: ["React", "Node.js", "MongoDB", "JWT", "Docker"],
       liveUrl: "https://valvulas.vercel.app/",
-      githubUrl: "https://github.com",
       category: "fullstack"
     }
   ];
@@ -206,17 +199,6 @@ const Projects: React.FC = () => {
                   >
                     <FaExternalLinkAlt size={14} />
                     Demo
-                  </motion.a>
-                  <motion.a
-                    href={toExternalHref(project.githubUrl)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                  >
-                    <FaGithub size={14} />
-                    Código
                   </motion.a>
                 </div>
               </div>
