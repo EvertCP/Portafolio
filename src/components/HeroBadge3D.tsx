@@ -23,6 +23,7 @@ declare module '@react-three/fiber' {
 useTexture.preload(
   'https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/SOT1hmCesOHxEYxL7vkoZ/c57b29c85912047c414311723320c16b/band.jpg'
 );
+useTexture.preload('/logo-ecp.png');
 
 export default function HeroBadge3D({
   firstName = 'Evert',
@@ -112,6 +113,7 @@ function Band({
   const texture: any = useTexture(
     'https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/SOT1hmCesOHxEYxL7vkoZ/c57b29c85912047c414311723320c16b/band.jpg'
   );
+  const logoTexture: any = useTexture('/logo-ecp.png');
   const { width, height } = useThree((state) => state.size);
   const [curve] = useState(
     () => new THREE.CatmullRomCurve3([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()])
@@ -119,7 +121,6 @@ function Band({
   const [dragged, drag] = useState<any>(false);
   const [hovered, hover] = useState(false);
   const nameKey = `${firstName}-${lastName}`;
-  const bigLetters = `${(firstName?.[0] ?? '').toUpperCase()}${(lastName?.[0] ?? '').toUpperCase()}P`.slice(0, 3);
 
   useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1]);
   useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1]);
@@ -213,15 +214,10 @@ function Band({
                       2026
                     </Text>
 
-                    <Text color="white" fontSize={0.9} position={[-0.25, 0.4, 0]} anchorX="center" anchorY="middle">
-                      {bigLetters[0]}
-                    </Text>
-                    <Text color="white" fontSize={0.9} position={[0.05, 0.05, 0]} anchorX="center" anchorY="middle">
-                      {bigLetters[1]}
-                    </Text>
-                    <Text color="white" fontSize={0.9} position={[0.35, -0.3, 0]} anchorX="center" anchorY="middle">
-                      {bigLetters[2]}
-                    </Text>
+                    <mesh position={[0, 0.15, 0]}>
+                      <planeGeometry args={[1.6, 1.6]} />
+                      <meshBasicMaterial map={logoTexture} transparent toneMapped={false} />
+                    </mesh>
 
                     <Text color="white" fontSize={0.14} position={[-0.95, -1.05, 0]} anchorX="left" anchorY="bottom">
                       Software Developer
