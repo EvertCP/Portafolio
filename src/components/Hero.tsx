@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
     {
       icon: <FaGraduationCap />,
       title: 'Educación',
-      description: 'Licenciatura en Ingeniería de Software con especialización en Desarrollo Web',
+      description: 'Ingeniería en Desarrollo de Software con especialización en Desarrollo Web',
     },
     {
       icon: <FaBriefcase />,
