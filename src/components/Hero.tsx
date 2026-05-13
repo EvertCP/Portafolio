@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaCode, FaUser, FaGraduationCap, FaBriefcase } from 'react-icons/fa';
+import { FaCode, FaUser, FaGraduationCap, FaBriefcase, FaFileAlt } from 'react-icons/fa';
 import HeroBadge3D from './HeroBadge3D';
 
 const Hero: React.FC = () => {
@@ -62,6 +62,19 @@ const Hero: React.FC = () => {
               Mi enfoque se centra en escribir código limpio, eficiente y mantenible, siempre buscando
               las mejores prácticas y las últimas tecnologías del mercado.
             </motion.p>
+
+            <motion.a
+              href="/evert_cv.pdf"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.45, duration: 0.6 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all"
+            >
+              <FaFileAlt />
+              Ver mi CV
+            </motion.a>
 
             <div className="mt-10 grid sm:grid-cols-3 gap-4">
               {highlights.map((item, index) => (
